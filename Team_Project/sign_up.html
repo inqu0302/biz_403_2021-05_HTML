@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+  </head>
+  <body>
+    <form name="join" method="POST" action="php_check.php">
+      <h1>회원 정보를 입력해주세요</h1>
+      <table>
+        <label>ID : <input type="text" name="userid" /></label>
+        <br />
+        <label>PW : <input type="text" name="userpw" /></label>
+        <br />
+        <label>PW again: <input type="text" name="userpw_a" /></label>
+        <br />
+        <label>email : <input type="text" name="useremail" /></label>
+        <br />
+        <label>name : <input type="text" name="username" /></label>
+        <br />
+        <label>성별 <label><input type="checkbox" name="sex" value="male"> 남성</label>
+        <label><input type="checkbox" name="sex" value="female"> 여성</label>
+      </table>
+    </form>
+    <form>지역선택
+      <select name="city">
+        <option value="1">서울</option>
+        <option value="1">인천</option>
+        <option value="1">대구</option>
+        <option value="1">대전</option>
+        <option value="1">서울</option>
+      </select>
+    </form>
+    <button>제출하기</button><button>뒤로가기</button>
+  </body>
+</html>

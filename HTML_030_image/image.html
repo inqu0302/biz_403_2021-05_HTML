@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이미지 다루기</title>
+    <style>
+      div {
+        width: 200px;
+        height: 100px;
+        border: 1px solid green;
+      }
+      div.img1 {
+        height: 200px;
+      }
+      div.img1 img {
+        width: 50%;
+      }
+      div.img2 img {
+        width: 50%;
+        /*
+        img에 float 적용하기
+        img에 float를 적용하면 이후에 p tag 등으로 작성한 text를 image 주변에 흐르듯이 표현할 수 있다.
+        */
+        float: left;
+        margin: 5px;
+      }
+      div.img3 img {
+        width: 100%;
+        height: 50%;
+      }
+      div.img4 img {
+        /*
+          박스 크기만큼만 보여주기
+          */
+        overflow: container;
+      }
+
+      div.img5 img {
+        /*
+          overflow:scroll과 비슷한 효과를 내며 이미지를 박스 크기만큼만 보여주고 scroll막대를 표시하여 
+          화면에서 scroll을 하면서 보여주기
+
+          overflow: scroll은 이미지 크기에 상관없이 항상 스크롤막대 표시
+          overflow: auto는 크기에 맞게 스크롤 막대 표시 (이미지가 더 클경우에만)
+          */
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>HTML에서 이미지 다루기</h2>
+    <p>img tag를 사용하여 이미지 표현</p>
+    <div class="img1">
+      <img src="images (1).jpg" width="100%" />
+      <p>img tag에 이미지 소스(src)를 지정하고 width를 지정하는 방법</p>
+    </div>
+    <div class="img2">
+      <img src="images (2).jpg" alt="image2" />
+      <p>img tag에 이미지 소스(src) 지정하고 alt하기</p>
+    </div>
+    <div class="img3">
+      <img src="images (3).jpg" alt="image3" />
+      <p>img tag에 이미지 소스(src) 지정하고 width와 heigth 지정하기</p>
+      <p>background를 사용하여 이미지 표현</p>
+    </div>
+    <div class="img4">
+      <img src="images (4).jpg" alt="image4" />
+      <p>images를 감싸는 container에 효과주기</p>
+    </div>
+    <div class="img5">
+      <img src="images (5).jpg" alt="image5" />
+      <p>images를 감싸는 container에 효과주기</p>
+    </div>
+  </body>
+</html>
