@@ -6,55 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
     <style>
-      *{
-        background-color: cadetblue;
-
+      body {
+        background: rgb(115, 137, 208);
+        background: linear-gradient(
+          45deg,
+          rgba(115, 137, 208, 1) 0%,
+          rgba(238, 189, 195, 1) 100%
+        );
+        background-attachment: fixed;
       }
-      div.form{
+      div.form {
         display: flex;
         margin-top: 10%;
-        justify-content: center; 
+        justify-content: center;
       }
 
-      h1.title{
+      h1.title {
         font-size: 50px;
-        text-shadow : 0 0 10px rgb(234 237 176);
+        text-shadow: 0 0 10px rgb(234 237 176);
         color: white;
         margin: 0 auto;
         text-align: center;
       }
 
-      div.login{
-        border : 5px double mintcream;
-        border-radius : 20px;
+      div.login {
+        border: 5px double mintcream;
+        border-radius: 20px;
         width: 320px;
         height: 170px;
         margin: 30px auto;
         float: left;
       }
 
-      div.login label{
-        width : 100px;
-        height : 20px;
-        float : left;
+      div.login label {
+        width: 100px;
+        height: 20px;
+        float: left;
         text-align: center;
       }
 
-      div.login input{
+      div.login input {
         background-color: mintcream;
-        border : none;
+        border: none;
       }
 
-      div.ID, div.password {
-        margin : 5% auto;
+      div.ID,
+      div.password {
+        margin: 5% auto;
       }
 
-      div.button{
+      div.button {
         display: flex;
         justify-content: center;
       }
 
-      div.button button{
+      div.button button {
         height: 30px;
         margin: 5px;
         border-radius: 5px;
@@ -64,24 +70,24 @@
     </style>
   </head>
   <body>
-  <div class="form">
-    <form>
-      <h1 class="title">W O O</h1>
-      <div class="login">
-        <div class="ID">
-          <label for="user">아이디</label>
-          <input type="text" />
+    <div class="form">
+      <form>
+        <h1 class="title">W O O</h1>
+        <div class="login">
+          <div class="ID">
+            <label for="user">아이디</label>
+            <input type="text" />
+          </div>
+          <div class="password">
+            <label for="user">비밀번호</label>
+            <input type="password" />
+          </div>
+          <div class="button">
+            <button>로그인하기</button>
+            <button>회원가입</button>
+          </div>
         </div>
-        <div class="password">
-          <label for="user">비밀번호</label>
-          <input type="password" />
-        </div>
-        <div class="button">
-          <button>로그인하기</button>
-          <button>회원가입</button>
-        </div>
-      </div>
-    </form>
-  </div>
+      </form>
+    </div>
   </body>
 </html>

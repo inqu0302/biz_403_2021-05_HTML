@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // nav와 selection을 별도의 변수로 만들기
   const nav = document.querySelector("nav#main_nav");
-  const conts = document.querySelector("section#contents");
+  const dot = document.querySelector("nav#dot_nav");
 
   // 이벤트 핸들러 함수 선언
   const navClick = (e) => {
@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // nav에 click event설정
   nav.addEventListener("click", navClick);
+  dot.addEventListener("click", navClick);
   /*
   scroll event는 화면이 스크롤 되는 동안에 엄청나게 많은 event를 발생한다
   event 핸들러에서 화면에 무언가 그리는 코드를 작성하게 되면 Browser, System에
@@ -74,9 +75,23 @@ document.addEventListener("DOMContentLoaded", () => {
       // 현재 보고있는 article과 같은 nav의 li에 active클래스를 지정
       li.classList.add("active");
 
+      let dot_activ = dot.querySelectorAll("li.active");
+      for (let i = 0; i < dot_activ.length; i++) {
+        dot_activ[i].classList.remove("active");
+      }
+      let dot_li = dot.querySelector("ul li." + art.id);
+      dot_li.classList.add("active");
+
       ticking = false;
     }
   };
-  // 현재 보고있는 화면이 스크롤되면
+
+  // 현재 보고 있는 화면이 스크롤되면
   document.addEventListener("scroll", scrollTop_nav_tick);
+
+  document
+    .querySelector("nav#main_nav .fa-bars")
+    .addEventListener("click", (e) => {
+      document.querySelector("nav#main_nav ul").classList.toggle("drop");
+    });
 });
