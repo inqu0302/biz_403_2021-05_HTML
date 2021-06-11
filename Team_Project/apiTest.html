@@ -6,5 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
   </head>
-  <body></body>
+  <body>
+    <h1>api 테스트</h1>
+  </body>
+  <script>
+    var options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0,
+    };
+
+    function success(pos) {
+      let crd = pos.coords;
+
+      console.log("Your current position is : ");
+      console.log("Latitude : " + crd.latitude);
+      console.log("Longitude: " + crd.longitude);
+      console.log("More or less " + crd.accuracy + " meters.");
+
+      let posJson = {
+        latitude: crd.latitude,
+        longitude: crd.longitude,
+      };
+    }
+
+    // fetch("${rootPath}/server/location", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(posJson),
+    // }).then((response) => alert(response));
+
+    // function error(err) {
+    //   console.warn("ERROR(" + err.code + "): " + err.message);
+    // }
+
+    // function getWeather(latitude, longitude) {
+    //   let APIKey = "de61f47858e356c28b29bf8b58a7d308";
+    //   fetch(
+    //     "pro.openweathermap.org/data/2.5/forecast/hourly?lat={latitude}&lon={longitude}&appid={APIKey}"
+    //   )
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       const temp = data.main.temp;
+    //       const weaters = data.weather[data.weather.length - 1];
+    //       weatherSpan.innerHTML = "${temp}&#176;C ${weathers.main}";
+
+    //       console.log("temp : {}" + temp);
+    //       console.log("weaters : {}" + weaters);
+    //     });
+    // }
+
+    // navigator.geolocation.getCurrentPosition(success, error, options);
+  </script>
 </html>
