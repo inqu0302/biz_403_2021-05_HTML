@@ -24,12 +24,15 @@
       console.log("Longitude: " + crd.longitude);
       console.log("More or less " + crd.accuracy + " meters.");
 
+      let latitude = crd.latitude;
+      let longitude = crd.longitude;
+
       let posJson = {
         latitude: crd.latitude,
         longitude: crd.longitude,
       };
 
-      fetch("${rootPath}/server/location", {
+     fetch("${rootPath}/server/location", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,5 +46,6 @@
     }
 
     navigator.geolocation.getCurrentPosition(success, error, options);
+    
   </script>
 </html>

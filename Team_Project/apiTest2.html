@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>API TEST</h1>
+</body>
+<script>
+    function askForcoords(){
+        navigator.geolocation.getCurrentPosition(handleGeosucces, handleGeoError);
+    }
+
+    function handleGeosucces(position){
+        const latitude = position.coords.latitude;
+        const longitude = postion.coords.longitude;
+        const coordsObj = {
+            lattidue,
+            longtitude
+        };
+        console.log("latitude : " + latitude)
+        console.log("longtitude : " + longitude)
+
+        saveCoords(coordsObj);
+        getWeather(latitude, longitude);
+        }
+
+        function handleGeoError (position){
+            console.log("Can't get your position.");
+        }
+
+        function getWeather(lat, lon){
+            fetch(
+                "https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=de61f47858e356c28b29bf8b58a7d308"
+            )
+            .tehn(function(response){
+                return response.json();
+            })
+            .then(function(json){
+                console.log(json);
+                const temparature = json.main.temp;
+                const place = json.name;
+                weather.innerText = "${temparature} @${place}";
+            });
+        }
+
+
+</script>
+</html>

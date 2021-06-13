@@ -16,6 +16,8 @@
       maximumAge: 0,
     };
 
+    var lat, lon;
+
     function success(pos) {
       let crd = pos.coords;
 
@@ -28,8 +30,37 @@
         latitude: crd.latitude,
         longitude: crd.longitude,
       };
-    }
 
+      lat = crd.latitude;
+      lon = crd.longitude;
+
+      fetch("${rootPath}/server/location", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(posJson),
+      }).then((response) => alert(response));
+    }
+    
+
+
+     function getWeather(lat, lon){
+      fetch('https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={de61f47858e356c28b29bf8b58a7d308}')
+      .then(res => res.json())
+      .then(data => {
+          const temp = data.main.temp;
+          const weathers = data.weather[data.weather.length -1];
+          weatherSpan.innerHTML = '${temp}&176;C ${weathers.main';
+
+
+          consol.log("temp : " + temp);
+          consol.log("weathers : " + weathers);
+      })
+
+
+    }
+   
     // fetch("${rootPath}/server/location", {
     //   method: "POST",
     //   headers: {
@@ -57,7 +88,6 @@
     //       console.log("weaters : {}" + weaters);
     //     });
     // }
-
-    // navigator.geolocation.getCurrentPosition(success, error, options);
+    navigator.geolocation.getCurrentPosition(success, error, options);
   </script>
 </html>
