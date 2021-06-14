@@ -6,26 +6,32 @@ const COORDS = "coords";
 
 function getWeather(lat, lng) {
   fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`
-  )
+    `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`
+    
+    )
     .then(function (response) {
       // .then = fetch가 완료 된 후 실행됨
       return response.json(); // json형태로 변환
     })
     .then(function (json) {
-      const temperature = json.main.temp;
-      const place = json.name;
-      const max_temp = json.main.temp_max;
-      const min_temp = json.main.temp_min;
-      const wind = json.wind.speed;
-      const weather = json.weather.description;
 
-      console.log("temperature :" + temperature);
-      console.log("place : " + place);
-      console.log("temp_max : " + max_temp);
-      console.log("temp_min : " + min_temp);
-      console.log("wind : " + wind);
-      console.log("weather : " + weather);
+      console.log(json)
+
+      console.log(json.list)
+
+      // const temperature = json.main.temp;
+      // const place = json.name;
+      // const max_temp = json.main.temp_max;
+      // const min_temp = json.main.temp_min;
+      // const wind = json.wind.speed;
+      // const weather = json.weather.description;
+
+      // console.log("temperature :" + temperature);
+      // console.log("place : " + place);
+      // console.log("temp_max : " + max_temp);
+      // console.log("temp_min : " + min_temp);
+      // console.log("wind : " + wind);
+      // console.log("weather : " + weather);
     });
 }
 
