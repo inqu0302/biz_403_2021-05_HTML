@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>image slide</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 이 페이지에서 사용할 애니메이션을 선언 */
+    @keyframes myslide {
+      /* 키프레임 시작점 */
+      0% {
+        transform: translateX(0); /* 현재모양에서 */
+      }
+      /* 키프레임 종료시점 */
+      100% {
+        transform: translateX(calc(-500px * 5));
+      }
+    }
+
+    div.main {
+      width: 500px;
+      height: 500px;
+      border: 1px solid green;
+      margin: 20px auto;
+    }
+
+    div.main div.mask {
+      border: 1px solid blue;
+      height: 400px;
+      /* div box 내의 이미지들이 범위를 벗어나게 되어 box만큼만 보여주기 */
+      overflow: hidden;
+    }
+
+    div.main div.images {
+      border: 1px solid red;
+      display: flex;
+
+      animation: myslide 15s linear infinite;
+    }
+
+    div.main div.images img {
+      width: 500px;
+      height: 400px;
+    }
+  </style>
+  <body>
+    <div class="main">
+      <div class="mask">
+        <div class="images">
+          <img src="images_1.jpg" />
+          <img src="images_2.jpg" />
+          <img src="images_3.jpg" />
+          <img src="images_4.jpg" />
+          <img src="images_5.jpg" />
+          <img src="images_1.jpg" />
+        </div>
+      </div>
+      <div class="btn_box">
+        <button>prev</button>
+        <button>next</button>
+      </div>
+    </div>
+  </body>
+</html>
