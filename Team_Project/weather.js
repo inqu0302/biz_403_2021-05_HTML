@@ -7,29 +7,25 @@ const COORDS = "coords";
 function getWeather(lat, lng) {
   fetch(
     `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`
-    
-    )
+  )
     .then(function (response) {
       // .then = fetch가 완료 된 후 실행됨
       return response.json(); // json형태로 변환
     })
     .then(function (json) {
-    
-      console.log("검색 지역 : " + json.city.name)
-      for(let i = 0; i < json.list.length ; i++){
-        console.log("예보날짜 : " + json.list[i].dt_txt)
-        console.log("현재온도 : " + json.list[i].main.temp)
-        console.log("최고기온 : " + json.list[i].main.temp_max)
-        console.log("최저기온 : " + json.list[i].main.temp_min)
-        console.log("체감온도 : " + json.list[i].main.feels_like)
-        console.log("날씨 : " + json.list[i].weather[0].id) 
-        console.log("날씨 : " + json.list[i].weather[0].main)
-        console.log("날씨 : " + json.list[i].weather[0].description)
-        console.log("최대풍속 : "+ json.list[i].wind.gust)
-        console.log("풍속 : "+ json.list[i].wind.speed)
+      console.log("검색 지역 : " + json.city.name);
+      for (let i = 0; i < json.list.length; i++) {
+        console.log("예보날짜 : " + json.list[i].dt_txt);
+        console.log("현재온도 : " + json.list[i].main.temp);
+        console.log("최고기온 : " + json.list[i].main.temp_max);
+        console.log("최저기온 : " + json.list[i].main.temp_min);
+        console.log("체감온도 : " + json.list[i].main.feels_like);
+        console.log("날씨 : " + json.list[i].weather[0].id);
+        console.log("날씨 : " + json.list[i].weather[0].main);
+        console.log("날씨 : " + json.list[i].weather[0].description);
+        console.log("최대풍속 : " + json.list[i].wind.gust);
+        console.log("풍속 : " + json.list[i].wind.speed);
       }
-
-      
 
       // const temperature = json.main.temp;
       // const place = json.name;
