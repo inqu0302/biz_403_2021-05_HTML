@@ -32,13 +32,19 @@
         longitude: crd.longitude,
       };
 
+      // 데이터를 받을 주소
      fetch("${rootPath}/server/location", {
+       // POST 옵션으로 보내겠다
         method: "POST",
         headers: {
+          // json 타입으로 보내겠다
           "Content-Type": "application/json",
         },
+        // web상에서는 데이터 전송이 안되기 때문에 json을 문자열(스트링)타입으로 바꿔서 전송을하겠다
         body: JSON.stringify(posJson),
-      }).then((response) => alert(response));
+        // 응답부에 json으로 전송을 하겠다
+      }).then((response=>response.json())
+      .then(json => alert(json));
     }
 
     function error(err) {
