@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <style>
+            *{
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            ul{
+                list-style: none;
+                position: relative;
+                width: 300px;
+                text-align: center;
+            }
+
+            ul li{
+                width: 90%;
+                position: absolute;
+                left: 0;
+                transform: translateX(-90%);
+                font-size: 20px;
+                padding: 1rem;
+                color: white;
+                font-weight: 900;
+                transition: 0.7s;
+            }
+
+            ul li:hover{
+                transform: translateX(-10%);
+            }
+
+            ul li:nth-of-type(1){
+                top: 30px;
+                background-color: aquamarine;
+            }
+
+            ul li:nth-of-type(2){
+                top: 90px;
+                background-color: rgb(40, 212, 91);
+            }
+
+            ul li:nth-of-type(3){
+                top: 150px;
+                background: rgb(119, 238, 21);
+
+            }
+            
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>우리나라</li>
+            <li>대한민국</li>
+            <li>Requblic Of Korea</li>
+        </ul>
+    </body>
+</html>
